@@ -1,0 +1,24 @@
+.star__input { display: none; }
+
+.star__input:hover ~ .star__label::after { color: #d12136 ; }
+.star__input:checked ~ .star__label::after { color: #d12136 ; }
+
+.star__label {
+  display: block;
+  font-size: 0;
+  line-height: 0;
+  cursor: pointer;
+}
+
+.star__label:not(:first-child) {
+  padding-left: 10px;
+}
+
+.star__label::after {
+  content: '★';
+  display: block;
+  font-size: 27px;
+  line-height: 27px;
+  color: rgba(189, 190, 194, 0.7);
+  transition: color 0.2s;
+}

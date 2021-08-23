@@ -1,0 +1,24 @@
+.official-info {
+  margin-top: -5px;
+  margin-bottom: 0;
+  margin-right: 100px;
+  color: #1a212f;
+}
+
+.official-info dt {
+  margin-bottom: 5px;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+}
+
+.official-info dd {
+  margin-left: 0;
+  font-size: 14px;
+  line-height: 19px;
+  font-weight: 600;
+}
+
+.official-info dd:not(:last-child) {
+  margin-bottom: 30px;
+}

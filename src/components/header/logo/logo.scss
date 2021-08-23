@@ -1,0 +1,24 @@
+.logo {
+  display: flex;
+  align-items: center;
+  padding-left: 8px;
+}
+
+.logo__description {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 20px;
+  letter-spacing: 0.13em;
+}
+
+.logo__first {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.logo__secondary {
+  font-size: 14px;
+  font-weight: 600;
+}

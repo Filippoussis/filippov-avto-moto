@@ -1,0 +1,21 @@
+.site-sections {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.site-sections a {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover {
+    color: #d12136;
+  }
+}

@@ -1,0 +1,25 @@
+.specifications {
+  width: 565px;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-top: 30px;
+  font-size: 16px;
+  line-height: 22px;
+  color: #48494d;
+}
+
+.specifications div {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 7px;
+  border-bottom: 1px solid #D7D9DF;
+}
+
+.specifications div:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.specifications dd {
+  margin-left: 0;
+  color: #000000;
+}
