@@ -15,9 +15,9 @@ function SiteMenuItem({item, setActiveItem, activeItem}) {
 }
 
 SiteMenuItem.propTypes = {
-  item: PropTypes.string,
-  activeItem: PropTypes.string,
-  setActiveItem: PropTypes.func,
+  item: PropTypes.string.isRequired,
+  activeItem: PropTypes.string.isRequired,
+  setActiveItem: PropTypes.func.isRequired,
 };
 
 export default SiteMenuItem;

@@ -19,7 +19,7 @@ function Rating({currentRating}) {
 }
 
 Rating.propTypes = {
-  currentRating: PropTypes.string,
+  currentRating: PropTypes.string.isRequired,
 };
 
 export default Rating;

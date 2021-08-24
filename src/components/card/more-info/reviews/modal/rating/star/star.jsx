@@ -17,8 +17,8 @@ function Star({starValue, currentRating}) {
 }
 
 Star.propTypes = {
-  currentRating: PropTypes.string,
-  starValue: PropTypes.oneOf(STARS_VALUES),
+  currentRating: PropTypes.string.isRequired,
+  starValue: PropTypes.oneOf(STARS_VALUES).isRequired,
 };
 
 export default Star;

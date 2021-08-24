@@ -47,7 +47,7 @@ function Review({item}) {
 }
 
 Review.propTypes = {
-  item: PropTypes.object,
+  item: PropTypes.object.isRequired,
 };
 
 export default Review;

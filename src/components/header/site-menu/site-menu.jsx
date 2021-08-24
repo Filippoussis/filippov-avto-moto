@@ -6,7 +6,7 @@ import './site-menu.scss';
 
 function SiteMenu() {
 
-  const [activeItem, setActiveItem] = useState(null);
+  const [activeItem, setActiveItem] = useState('');
 
   const items = SITE_MENU_LIST.map((item) => (
     <li key={item}>

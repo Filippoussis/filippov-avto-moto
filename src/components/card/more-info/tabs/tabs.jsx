@@ -24,8 +24,8 @@ function Tabs({activeTab, onClickTab}) {
 }
 
 Tabs.propTypes = {
-  activeTab: PropTypes.string,
-  onClickTab: PropTypes.func,
+  activeTab: PropTypes.string.isRequired,
+  onClickTab: PropTypes.func.isRequired,
 };
 
 

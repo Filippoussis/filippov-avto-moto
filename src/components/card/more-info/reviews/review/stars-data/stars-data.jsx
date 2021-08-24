@@ -22,7 +22,7 @@ function StarsData({rating}) {
 }
 
 StarsData.propTypes = {
-  rating: PropTypes.number,
+  rating: PropTypes.number.isRequired,
 };
 
 export default StarsData;

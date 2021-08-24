@@ -92,8 +92,8 @@ function Modal({onActive, addComment}) {
 }
 
 Modal.propTypes = {
-  onActive: PropTypes.func,
-  addComment: PropTypes.func,
+  onActive: PropTypes.func.isRequired,
+  addComment: PropTypes.func.isRequired,
 };
 
 export default Modal;
