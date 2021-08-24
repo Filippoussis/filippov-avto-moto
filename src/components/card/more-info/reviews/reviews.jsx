@@ -4,7 +4,7 @@ import Modal from './modal/modal';
 
 import './reviews.scss';
 
-const keyCodeEscape = 27;
+const KEY_CODE_ESCAPE = 27;
 
 let id = 10;
 
@@ -46,7 +46,7 @@ function Reviews() {
   };
 
   const handleKeyDownEsc = useCallback((event) => {
-    if(event.keyCode === keyCodeEscape) {
+    if(event.keyCode === KEY_CODE_ESCAPE) {
       setModalActive(false);
     }
   }, []);
