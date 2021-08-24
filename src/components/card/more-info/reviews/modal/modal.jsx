@@ -48,8 +48,6 @@ function Modal({onActive, addComment}) {
         date: dayjs().format(),
       };
 
-      console.log(data);
-
       localStorage.setItem('formData', JSON.stringify(data));
 
       addComment(data);
