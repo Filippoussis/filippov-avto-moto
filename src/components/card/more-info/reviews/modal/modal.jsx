@@ -48,6 +48,8 @@ function Modal({onActive, addComment}) {
         date: dayjs().format(),
       };
 
+      console.log(data);
+
       localStorage.setItem('formData', JSON.stringify(data));
 
       addComment(data);
@@ -64,9 +66,9 @@ function Modal({onActive, addComment}) {
         <h2>Оставить отзыв</h2>
         <button type="button" className="modal__close" onClick={handleClick} aria-label="Кнопка Закрыть"></button>
         <div className="modal__fields">
-          <label htmlFor="name" className="modal__label modal__label--name">
+          <label htmlFor="username" className="modal__label modal__label--name">
             {invalidName && <InvalidMessage />}
-            <input type="text" id="name" name="name" className={`modal__input ${invalidName && 'modal__input--invalid'}`} placeholder="Имя" autoFocus defaultValue={username} />
+            <input type="text" id="username" name="username" className={`modal__input ${invalidName && 'modal__input--invalid'}`} placeholder="Имя" autoFocus defaultValue={username} />
             <span>*</span>
           </label>
           <label htmlFor="advantages" className="modal__label modal__label--advantages">
