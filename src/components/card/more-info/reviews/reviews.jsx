@@ -4,28 +4,30 @@ import Modal from './modal/modal';
 
 import './reviews.scss';
 
+const keyCodeEscape = 27;
+
 let id = 10;
 
 const mockDataReviews = [
-    {
-      id: 1,
-      name: 'Борис Иванов',
-      advantages: 'мощность, внешний вид',
-      disadvantages: 'Слабые тормозные колодки (пришлось заменить)',
-      comment: 'Взяли по трейд-ин, на выгодных условиях у дилера. Стильная внешка и крут по базовым характеристикам. Не думал, что пересяду на китайский автопром, но сейчас гоняю и понимаю, что полностью доволен.',
-      rating: 4,
-      date: '2021-05-08T14:13:56.569Z',
-    },
-    {
-      id: 2,
-      name: 'Марсель Исмагилов',
-      advantages: 'Cтиль, комфорт, управляемость',
-      disadvantages: 'Дорогой ремонт и обслуживание',
-      comment: 'Дизайн отличный, управление просто шикарно, ощущения за рулём такой машины особые. Но ремонт очень дорогой. Пару месяцев назад пришлось менять двигатель. По стоимости вышло как новый автомобиль. Так что, если покупать эту машину, надо быть готовым к большим расходам на обслуживание.',
-      rating: 2,
-      date: '2021-08-20T14:13:56.569Z',
-    },
-  ];
+  {
+    id: 1,
+    name: 'Борис Иванов',
+    advantages: 'мощность, внешний вид',
+    disadvantages: 'Слабые тормозные колодки (пришлось заменить)',
+    comment: 'Взяли по трейд-ин, на выгодных условиях у дилера. Стильная внешка и крут по базовым характеристикам. Не думал, что пересяду на китайский автопром, но сейчас гоняю и понимаю, что полностью доволен.',
+    rating: 4,
+    date: '2021-05-08T14:13:56.569Z',
+  },
+  {
+    id: 2,
+    name: 'Марсель Исмагилов',
+    advantages: 'Cтиль, комфорт, управляемость',
+    disadvantages: 'Дорогой ремонт и обслуживание',
+    comment: 'Дизайн отличный, управление просто шикарно, ощущения за рулём такой машины особые. Но ремонт очень дорогой. Пару месяцев назад пришлось менять двигатель. По стоимости вышло как новый автомобиль. Так что, если покупать эту машину, надо быть готовым к большим расходам на обслуживание.',
+    rating: 2,
+    date: '2021-08-20T14:13:56.569Z',
+  },
+];
 
 function Reviews() {
 
@@ -36,27 +38,24 @@ function Reviews() {
     const newComment = {
       id: id++,
       ...comment,
-    }
-  
-    updateData((state) => {
-        return [
-        ...state,
-        newComment,
-      ];
-    });
-  }
+    };
+    updateData((state) => ([
+      ...state,
+      newComment,
+    ]));
+  };
 
   const handleKeyDownEsc = useCallback((event) => {
-    if(event.keyCode === 27) {
+    if(event.keyCode === keyCodeEscape) {
       setModalActive(false);
     }
   }, []);
 
   useEffect(() => {
-    document.addEventListener("keydown", handleKeyDownEsc);
+    document.addEventListener('keydown', handleKeyDownEsc);
 
     return () => {
-      document.removeEventListener("keydown", handleKeyDownEsc);
+      document.removeEventListener('keydown', handleKeyDownEsc);
     };
   }, [handleKeyDownEsc]);
 

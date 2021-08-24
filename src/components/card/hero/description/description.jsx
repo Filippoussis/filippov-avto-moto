@@ -26,14 +26,12 @@ function Description() {
 
   const {title, parameters, price, marketingPrice} = specData;
 
-  const specItems = Object.entries(parameters).map(([key, value]) => {
-    return (
-      <li key={key} className="description__item">
-        <img src={SpecIcon[key]} alt={key} width="40" height="40" />
-        <span className="description__value">{value}</span>
-      </li>
-    );
-  });
+  const specItems = Object.entries(parameters).map(([key, value]) => (
+    <li key={key} className="description__item">
+      <img src={SpecIcon[key]} alt={key} width="40" height="40" />
+      <span className="description__value">{value}</span>
+    </li>
+  ));
 
   return (
     <article className="description">

@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import dayjs from 'dayjs';
+import PropTypes from 'prop-types';
 
 import Rating from './rating/rating';
 import InvalidMessage from './invalid-message/invalid-message';
@@ -9,7 +10,7 @@ import './modal.scss';
 function Modal({onActive, addComment}) {
 
   const [formData, setFormData] = useState({
-    name: '',
+    username: '',
     advantages: '',
     disadvantages: '',
     comment: '',
@@ -25,40 +26,37 @@ function Modal({onActive, addComment}) {
   const handleChange = (evt) => {
     const {name, value} = evt.target;
 
-    setFormData((state) => {
-      return {
-        ...state,
-        [name]: value,
-      }
-    })
-  }
+    setFormData((state) => ({
+      ...state,
+      [name]: value,
+    }));
+  };
+
   const handleSubmit = (evt) => {
     evt.preventDefault();
 
-    const {name, comment} = formData;
-
-    if (name.trim() === '' || comment.trim() === '') {
+    if (formData.username.trim() === '' || formData.comment.trim() === '') {
       setInvalidForm({
-        invalidName: !Boolean(name.trim()),
-        invalidComment: !Boolean(comment.trim()),
+        invalidName: !formData.username.trim(),
+        invalidComment: !formData.comment.trim(),
       });
     } else {
-
       const data = {
         ...formData,
+        name: formData.username,
+        rating: Number(formData.rating),
         date: dayjs().format(),
-      }
+      };
 
       localStorage.setItem('formData', JSON.stringify(data));
 
       addComment(data);
       onActive(false);
     }
-  }
+  };
 
-  const {name, advantages, disadvantages, comment, rating} = formData;
+  const {username, advantages, disadvantages, comment, rating} = formData;
   const {invalidName, invalidComment} = invalidForm;
-  
 
   return (
     <div className="modal" onClick={handleClick}>
@@ -68,7 +66,7 @@ function Modal({onActive, addComment}) {
         <div className="modal__fields">
           <label htmlFor="name" className="modal__label modal__label--name">
             {invalidName && <InvalidMessage />}
-            <input type="text" id="name" name="name" className={`modal__input ${invalidName && 'modal__input--invalid'}`} placeholder="Имя" autoFocus={true} defaultValue={name} />
+            <input type="text" id="name" name="name" className={`modal__input ${invalidName && 'modal__input--invalid'}`} placeholder="Имя" autoFocus defaultValue={username} />
             <span>*</span>
           </label>
           <label htmlFor="advantages" className="modal__label modal__label--advantages">
@@ -92,5 +90,10 @@ function Modal({onActive, addComment}) {
     </div>
   );
 }
+
+Modal.propTypes = {
+  onActive: PropTypes.func,
+  addComment: PropTypes.func,
+};
 
 export default Modal;

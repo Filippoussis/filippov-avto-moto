@@ -11,3 +11,16 @@
 .site-menu li:not(:last-child){
   margin-right: 68px;
 }
+
+.site-menu__link {
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 600;
+  text-decoration: none;
+  color: inherit;
+
+  &:hover,
+  &--active {
+    color: #d12136;
+  }
+}

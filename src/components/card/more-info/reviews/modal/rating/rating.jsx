@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Star from './star/star';
 
 import {STARS_VALUES} from '../../../../../../const';
@@ -16,5 +17,9 @@ function Rating({currentRating}) {
     </div>
   );
 }
+
+Rating.propTypes = {
+  currentRating: PropTypes.string,
+};
 
 export default Rating;

@@ -14,12 +14,12 @@ const SPECIFICATON_DATA = {
 
 function Specifications() {
 
-  const items = Object.entries(SPECIFICATON_DATA).map(([key, value]) => 
+  const items = Object.entries(SPECIFICATON_DATA).map(([key, value]) => (
     <div key={key}>
       <dt>{key}</dt>
       <dd>{value}</dd>
     </div>
-  );
+  ));
 
   return <dl className="specifications">{items}</dl>;
 }

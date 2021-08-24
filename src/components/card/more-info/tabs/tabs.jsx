@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import {TabsName} from '../../../../const';
 
@@ -21,5 +22,11 @@ function Tabs({activeTab, onClickTab}) {
     </div>
   );
 }
+
+Tabs.propTypes = {
+  activeTab: PropTypes.string,
+  onClickTab: PropTypes.func,
+};
+
 
 export default Tabs;

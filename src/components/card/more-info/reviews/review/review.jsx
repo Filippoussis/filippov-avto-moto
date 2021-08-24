@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {Link} from 'react-router-dom';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
@@ -44,5 +45,9 @@ function Review({item}) {
     </article>
   );
 }
+
+Review.propTypes = {
+  item: PropTypes.object,
+};
 
 export default Review;

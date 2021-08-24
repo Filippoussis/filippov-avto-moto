@@ -4,7 +4,7 @@ import {YMaps, Map, Placemark} from 'react-yandex-maps';
 const Coords = {
   LAT: '59.968137',
   LNG: '30.316272',
-}
+};
 
 function OfficialMap() {
   return (

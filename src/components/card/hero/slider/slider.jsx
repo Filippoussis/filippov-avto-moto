@@ -25,7 +25,7 @@ const Slides = {
     '2x': {
       big: desktop2xBigSlide1,
       small: desktop2xSmallSlide1,
-    }
+    },
   },
   2: {
     '1x':  {
@@ -46,20 +46,18 @@ const Slides = {
       big: desktop2xBigSlide3,
       small: desktop2xSmallSlide3,
     },
-  }
+  },
 };
 
 function Slider() {
 
   const [activeSlide, setActiveSlide] = useState(1);
 
-  const sliderMiniItems = Object.entries(Slides).map(([key, value]) => {
-    return (
-      <li key={key}>
-        <img src={value['1x']['small']} srcSet={value['2x']['small']} alt="Изображение автомобиля" width="128" height="80"></img>
-      </li>
-    );
-  });
+  const sliderMiniItems = Object.entries(Slides).map(([key, value]) => (
+    <li key={key}>
+      <img src={value['1x']['small']} srcSet={value['2x']['small']} alt="Изображение автомобиля" width="128" height="80"></img>
+    </li>
+  ));
 
   const isDisabledBack = activeSlide === 1;
   const isDisabledForward = activeSlide === Object.keys(Slides).length;

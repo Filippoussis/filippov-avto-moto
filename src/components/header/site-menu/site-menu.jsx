@@ -6,13 +6,13 @@ import './site-menu.scss';
 
 function SiteMenu() {
 
-  const [isActiveItem, setActiveItem] = useState(null);
+  const [activeItem, setActiveItem] = useState(null);
 
-  const items = SITE_MENU_LIST.map((item) =>
+  const items = SITE_MENU_LIST.map((item) => (
     <li key={item}>
-      <SiteMenuItem item={item} isActiveItem={isActiveItem} setActiveItem={setActiveItem}/>
+      <SiteMenuItem item={item} activeItem={activeItem} setActiveItem={setActiveItem}/>
     </li>
-  );
+  ));
 
   return (
     <ul className="site-menu">

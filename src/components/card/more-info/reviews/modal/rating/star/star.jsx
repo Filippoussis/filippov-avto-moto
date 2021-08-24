@@ -1,5 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './star.scss';
+
+import {STARS_VALUES} from '../../../../../../../const';
 
 function Star({starValue, currentRating}) {
 
@@ -12,5 +15,10 @@ function Star({starValue, currentRating}) {
     </>
   );
 }
+
+Star.propTypes = {
+  currentRating: PropTypes.string,
+  starValue: PropTypes.oneOf(STARS_VALUES),
+};
 
 export default Star;
