@@ -1,5 +1,3 @@
-.star__input { display: none; }
-
 .star__input:hover ~ .star__label::after { color: #d12136 ; }
 .star__input:checked ~ .star__label::after { color: #d12136 ; }
 
@@ -12,6 +10,10 @@
 
 .star__label:not(:first-child) {
   padding-left: 10px;
+}
+
+.star__label:last-child {
+  padding-left: 0;
 }
 
 .star__label::after {

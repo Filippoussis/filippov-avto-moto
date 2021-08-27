@@ -21,6 +21,11 @@
   background-repeat: no-repeat;
   background-color: transparent;
   cursor: pointer;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px blue;
+  }
 }
 
 .modal__form {
@@ -95,6 +100,11 @@
   &--invalid {
     border: 1px solid #FF0000;
   }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px blue;
+  }
 }
 
 .modal__label--name span,
@@ -121,5 +131,10 @@
 
   &:hover {
     background-color: #bd0c21;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px blue;
   }
 }

@@ -2,6 +2,8 @@ import React, {useState, useEffect, useCallback} from 'react';
 import Review from './review/review';
 import Modal from './modal/modal';
 
+import {setNoBodyScroll, setBodyScroll} from '../../../../utils';
+
 import './reviews.scss';
 
 const KEY_CODE_ESCAPE = 27;
@@ -47,6 +49,7 @@ function Reviews() {
 
   const handleKeyDownEsc = useCallback((event) => {
     if(event.keyCode === KEY_CODE_ESCAPE) {
+      setBodyScroll();
       setModalActive(false);
     }
   }, []);
@@ -59,7 +62,10 @@ function Reviews() {
     };
   }, [handleKeyDownEsc]);
 
-  const handleClickButton = () => setModalActive(true);
+  const handleClickButton = () => {
+    setNoBodyScroll();
+    setModalActive(true);
+  };
 
   const items = data.map((item) => <li key={item.id}><Review item={item} /></li>);
 

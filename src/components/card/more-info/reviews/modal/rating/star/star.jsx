@@ -10,7 +10,7 @@ function Star({starValue, currentRating}) {
 
   return (
     <>
-      <input className="star__input" id={`star-${starValue}`} type="radio" name="rating" value={starValue} defaultChecked={isChecked} />
+      <input className="star__input visually-hidden" id={`star-${starValue}`} type="radio" name="rating" value={starValue} defaultChecked={isChecked} />
       <label className="star__label" htmlFor={`star-${starValue}`}>Rating {starValue}</label>
     </>
   );
