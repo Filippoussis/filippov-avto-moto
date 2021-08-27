@@ -1,26 +1,48 @@
-.star__input:hover ~ .star__label::after { color: #d12136 ; }
-.star__input:checked ~ .star__label::after { color: #d12136 ; }
-
-.star__label {
-  display: block;
-  font-size: 0;
-  line-height: 0;
-  cursor: pointer;
+.star__input {
+  position: absolute;
+  height: 25px;
+  margin: 0;
+  top: 0;
+  left: 0;
+  background-size: 27px auto;
+  background-repeat: repeat-x;
+  appearance: none;
 }
 
-.star__label:not(:first-child) {
-  padding-left: 10px;
+.star__input:focus {
+  outline: none;
 }
 
-.star__label:last-child {
-  padding-left: 0;
+.star__input:checked,
+.star__input:hover {
+  background-image: url('./star-active.svg');
 }
 
-.star__label::after {
-  content: '★';
-  display: block;
-  font-size: 27px;
-  line-height: 27px;
-  color: rgba(189, 190, 194, 0.7);
-  transition: color 0.2s;
+.star__input:hover ~ .star__input {
+  background-image: url('./star-default.svg');
+}
+
+.star__input:nth-of-type(1) {
+  width: 27px;
+  z-index: 5;
+}
+
+.star__input:nth-of-type(2) {
+  width: 54px;
+  z-index: 4;
+}
+
+.star__input:nth-of-type(3) {
+  width: 81px;
+  z-index: 3;
+}
+
+.star__input:nth-of-type(4) {
+  width: 108px;
+  z-index: 2;
+}
+
+.star__input:nth-of-type(5) {
+  width: 135px;
+  z-index: 1;
 }

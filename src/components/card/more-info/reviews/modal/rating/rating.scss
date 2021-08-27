@@ -1,8 +1,12 @@
 .rating {
-  display: flex;
-  flex-direction: row-reverse;
+  position: relative;
+  width: 135px;
+  height: 25px;
+  background-image: url('../rating/star/star-default.svg');
+  background-size: 27px auto;
+  background-repeat: repeat-x;
 }
 
 .rating:focus-within {
-  box-shadow: 0 0 0 2px blue;
+  outline: 2px solid blue;
 }
