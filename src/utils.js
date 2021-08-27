@@ -7,3 +7,6 @@ const RATING_VERDICT = [
 export const getRatingVerdict = (value) => RATING_VERDICT
   .find(({rating}) => rating <= value)
   .title || '';
+
+export const setNoBodyScroll = () => document.body.style.overflow = 'hidden';
+export const setBodyScroll = () => document.body.style.overflow = 'scroll';
