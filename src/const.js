@@ -8,4 +8,4 @@ export const TabsName = {
   CONTACTS: 'Контакты',
 };
 
-export const STARS_VALUES = ['5', '4', '3', '2', '1'];
+export const STARS_VALUES = ['1', '2', '3', '4', '5'];
