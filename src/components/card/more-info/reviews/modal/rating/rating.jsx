@@ -13,6 +13,7 @@ function Rating({currentRating}) {
 
   return (
     <div className="rating">
+      <input className="rating__input visually-hidden" name="rating" value="0" type="radio" defaultChecked />
       {ratingStars}
     </div>
   );

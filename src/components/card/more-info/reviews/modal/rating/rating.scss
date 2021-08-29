@@ -1,12 +1,33 @@
 .rating {
-  position: relative;
-  width: 135px;
-  height: 25px;
-  background-image: url('../rating/star/star-default.svg');
-  background-size: 27px auto;
-  background-repeat: repeat-x;
+  display: flex;
 }
 
 .rating:focus-within {
   outline: 2px solid blue;
+  outline-offset: 0.4em;
+}
+
+.rating__label {
+  font-size: 27px;
+  cursor: pointer;
+}
+
+.rating__label:not(:last-of-type) {
+  padding-right: 8px;
+}
+
+.rating__icon--star {
+  color: #d12136;
+}
+
+.rating__input:checked ~ .rating__label .rating__icon--star {
+  color: rgba($color: #bdbec2, $alpha: 0.7);
+}
+
+.rating:hover .rating__label .rating__icon--star {
+  color: #d12136;
+}
+
+.rating__input:hover ~ .rating__label .rating__icon--star {
+  color: rgba($color: #bdbec2, $alpha: 0.7);
 }
